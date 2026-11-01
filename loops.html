@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loops Questions</title>
+	<link rel="stylesheet" href="style1.css">
+	<script src="script1.js" defer></script>
+</head>
+
+<body>
+
+
+   <header>
+	<h1>Loops Questions</h1>
+	<p>Choose a question to see its answer.</p>
+   </header>
+
+
+   <main>
+	<a href="index1.html" class="back">← Back to Topics</a>
+
+
+	<div class="question" onclick="showAnswer('q1')">
+	   Question 1: Enter a number from the user and find out the binary of that number.	
+	</div>
+	
+	<div class="answer" id="q1">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num, rem, arr[16], x = 0, i;
+    printf("Enter the number to find its binary : ");
+    scanf("%d", &num);
+
+    while (num != 0)
+    {
+        rem = num % 2;
+
+        arr[x] = rem;
+        num = num / 2;
+        x++;
+    }
+
+    for (i = x - 1; i >= 0; i--)
+    {
+        printf("%d", arr[i]);
+    }
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter the number to find its binary : 101
+1100101
+	   </pre>
+	      
+	</div>
+ 
+
+	<div class="question" onclick="showAnswer('q2')">
+	   Question 2: Enter a number from the user and check that the number is divisible by any prime number or not.
+	</div>
+	
+	<div class="answer" id="q2">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num, prime, got = 0;
+    printf("Enter a number : ");
+    scanf("%d", &num);
+
+    for (int i = 2; i <= num / 2; i++)
+    {
+        prime = 1;
+        for (int j = 2; j <= i / 2; j++)
+        {
+            if (i % j == 0)
+            {
+                prime = 0;
+                break;
+            }
+        }
+
+        if (prime && num % i == 0)
+        {
+            got = 1;
+            break;
+        }
+    }
+
+    if (got)
+    {
+        printf("The number %d is divisible by  prime number", num);
+    }
+
+    else
+    {
+        printf("The number %d is not divisible by prime number", num);
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number : 6
+The number 6 is divisible by  prime number
+	   </pre>
+ 
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q3')">
+	   Question 3: Enter a number from the user and check it is a prime number or not.
+	</div>
+	
+	<div class="answer" id="q3">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+    printf("Enter a number : ");
+    scanf("%d", &num);
+
+    if (num <= 1)
+    {
+        printf("%d is not a Prime number", num);
+    }
+
+    else if (num == 2)
+    {
+        printf("%d is a Prime number", num);
+    }
+
+    else
+    {
+
+        for (int i = 2; i&lt;num; i++)
+        {
+            if (num % i == 0)
+            {
+                printf("%d is not a prime number", num);
+                break;
+            }
+
+            if (i = num - 1)
+            {
+                printf("%d is a Prime number", num);
+            }
+        }
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number : 7
+7 is a Prime number
+	   </pre>  
+	   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q4')">
+	   Question 4: Enter a number from the user and print all digit of the number in separate line.
+	</div>
+	
+	<div class="answer" id="q4">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+    printf("Enter a number : ");
+    scanf("%d", &num);
+
+    while (num != 0)
+    {
+        printf("%d\n", num % 10);
+        num = num / 10;
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter a number : 654321
+1
+2
+3
+4
+5
+6
+	   </pre>
+   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q5')">
+	   Question 5: Write a program to print your name 1 lakh times.
+	</div>
+	
+	<div class="answer" id="q5">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    for (int i = 0; i&lt;100000; i++)
+    {
+        printf("iqra parveen\n");
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+iqra parveen
+iqra parveen
+iqra parveen
+....
+iqra parveen
+
+
+	   </pre>
+   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q6')">
+	   Question 6: Write a program to print a series 1 to 1 lakh.
+	</div>
+	
+	<div class="answer" id="q6">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    for (int i = 1; i <= 100000; i++)
+    {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+...
+99998
+99999
+100000
+
+	   </pre>
+  
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q7')">
+	   Question 7: Enter a number from the user and print the series from 1 to that number. 
+	</div>
+	
+	<div class="answer" id="q7">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+    printf("Enter a number : ");
+    scanf("%d", &num);
+
+    for (int i = 1; i <= num; i++)
+    {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number : 9 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+	   </pre>   
+	   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q8')">
+	   Question 8: Enter a number from the user and print that number 100 time.
+	</div>
+	
+	<div class="answer" id="q8">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+    printf("Enter a number : ");
+    scanf("%d", &num);
+
+    for (int i = 0; i&lt;100; i++)
+    {
+        printf("%d\n", num);
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter a number : 53
+53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53
+53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 
+53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53
+53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53
+53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53
+53 53 53 53 53 53 53 53 53 53 53 53 53 53 53 53
+53 53 53 53
+	   </pre>
+	   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q9')">
+	   Question 9: Write a program print all the odd number between 1 to 100.
+	</div>
+	
+	<div class="answer" id="q9">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Here are the list of ODD NUMBERS between 1 to 100 :- ");
+    for (int i = 1; i <= 100; i = i + 2)
+    {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Here are the list of ODD NUMBERS between 1 to 100 :-
+1 3 5 7
+9 11 13 15
+17 19 21 23
+25 27 29 31
+33 35 37 39
+41 43 45 47
+49 51 53 55
+57 59 61 63
+65 67 69 71
+73 75 77 79
+81 83 85 87
+89 91 93 95
+97 99
+	   </pre> 
+	   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q10')">
+	   Question 10: Write a program print the table of 4 in the format given as below (till 20)?
+	   4*1=4 and so on.
+	</div>
+	
+	<div class="answer" id="q10">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+int num = 4;
+int main()
+{
+    printf("Here is the multiplication table of 4 :-\n ");
+    for (int i = 1; i <= 20; i++)
+    {
+        printf("%d*%d = %d\n", num, i, 4 * i);
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Here is the multiplication table of 4 :-
+ 4*1 = 4
+4*2 = 8
+4*3 = 12
+4*4 = 16
+4*5 = 20
+4*6 = 24
+4*7 = 28
+4*8 = 32
+4*9 = 36
+4*10 = 40
+4*11 = 44
+4*12 = 48
+4*13 = 52
+4*14 = 56
+4*15 = 60
+4*16 = 64
+4*17 = 68
+4*18 = 72
+4*19 = 76
+4*20 = 80
+	   </pre>
+   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q11')">
+	   Question 11: Enter the number from user and reverse the number.
+	</div>
+	
+	<div class="answer" id="q11">	   
+	   <h3>Code</h3>
+	  <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+    printf("Enter a number to get its reverse : ");
+    scanf("%d", &num);
+
+    while (num != 0)
+    {
+        printf("%d", num % 10);
+        num = num / 10;
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number to get its reverse : 984256
+652489
+	   </pre>  
+	   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q12')">
+	   Question 12: Enter a number from the user if the user enter 1 then you will perform addition operation by entering 2 number from user add it and display answer. if user enter 2 then subtract or if user enter 3 then multiply or if user enter 4 then divide or if user enter 5 then modulous or if any other number then print invalid .if user want to quit the program then user will enter Q.
+	</div>
+	
+	<div class="answer" id="q12">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+   char choice;
+   float num1, num2;
+   int num3, num4;
+
+again:
+
+   do
+   {
+      printf("What operation would you like to perform : \nAddition - 1\nSubstraction - 2\nMultiplication - 3\nDivision - 4\nModulus - 5 \nQuit - q\n\n");
+
+      printf("Enter Your choice as a number : ");
+      scanf("%c", &choice);
+      fflush(stdin);
+
+      if (choice == '5')
+      {
+         goto modulo;
+      }
+
+      if (choice == 'q')
+      {
+         break;
+      }
+
+      printf("Enter the first number : ");
+      scanf("%f", &num1);
+
+      printf("Enter the Second number : ");
+      scanf("%f", &num2);
+
+      if (choice == '1')
+      {
+         printf("The SUM of %f and %f :  %f\n", num1, num2, num1 + num2);
+      }
+
+      else if (choice == '2')
+      {
+         printf("The SUBSTRACTION of %f from %f :  %f\n", num1, num2, num1 - num2);
+      }
+
+      else if (choice == '3')
+      {
+         printf("The MULTIPLICATION of %f and %f :  %f\n", num1, num2, num1 * num2);
+      }
+
+      else if (choice == '4')
+      {
+         printf("The DIVISION of %f by %f :  %f\n", num1, num2, num1 / num2);
+      }
+
+      else if (choice == '5')
+      {
+
+      modulo:
+
+         printf("Enter the first Number : ");
+         scanf("%d", &num3);
+         fflush(stdin);
+
+         printf("Enter the second Number : ");
+         scanf("%d", &num4);
+         fflush(stdin);
+
+         printf("The MODULUS of %d with %d :  %d\n", num3, num4, num3 % num4);
+      }
+
+      else
+      {
+      invalid:
+         printf("\nYou have pressed INVALID number !\npress the right number again!\n\n");
+         goto again;
+      }
+
+      printf("\nDo you want to do operations again or quit?\n Quit - q\nAgain - any number\n");
+      printf("\nEnter your choice as in the above mentioned format : ");
+      scanf("%c", &choice);
+      fflush(stdin);
+
+   } while (choice != 'q');
+
+   return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+What operation would you like to perform : 
+Addition - 1
+Substraction - 2
+Multiplication - 3
+Division - 4
+Modulus - 5 
+Quit - q
+
+Enter Your choice as a number : 1
+Enter the first number : 5
+Enter the Second number : 8
+The SUM of 5.000000 and 8.000000 :  13.000000
+
+Do you want to do operations again or quit?
+ Quit - q
+Again - any number
+
+Enter your choice as in the above mentioned format : What operation would you like to perform : 
+Addition - 1
+Substraction - 2
+Multiplication - 3
+Division - 4
+Modulus - 5 
+Quit - q
+
+Enter Your choice as a number : 5
+Enter the first Number : 9
+Enter the second Number : 3
+The MODULUS of 9 with 3 :  0
+
+Do you want to do operations again or quit?
+ Quit - q
+Again - any number
+
+Enter your choice as in the above mentioned format : q
+	   </pre>
+   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q13')">
+	   Question 13: Enter the number from user and check its palindrome or not.
+	</div>
+	
+	<div class="answer" id="q13">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+
+int main() {
+    int num, org;
+    int rev =0;
+
+    printf("Enter a number to check if it is a palindrome or not: ");
+    scanf("%d", &num);
+
+    org = num;
+
+    while (num!=0) {
+        rev = rev * 10 + (num % 10); 
+        num = num / 10;
+    }
+
+    if (org == rev)
+        printf("Yes, it is a palindrome number.");
+    else
+        printf("No, it is not a palindrome number.");
+
+    return 0;
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number to check if it is a palindrome or not: 1010101
+Yes, it is a palindrome number.
+
+
+Enter a number to check if it is a palindrome or not: 236879
+No, it is not a palindrome number.
+	   </pre>
+ 
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q14')">
+	   Question 14: Enter two numbers from users, one is base and second is power. Write the result.
+	</div>
+	
+	<div class="answer" id="q14">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int base, power;
+    int num = 1;
+
+    printf("Enter the base number : ");
+    scanf("%d", &base);
+
+    printf("Enter the power number : ");
+    scanf("%d", &power);
+
+    for (int i = 1; i <= power; i++)
+    {
+        num = num * base;
+    }
+
+    printf("%d", num);
+
+    return 0;
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter the base number : 24
+Enter the power number : 4
+331776
+	   </pre>  
+	   
+	</div>
+
+	<div class="question" onclick="showAnswer('q15')">
+	   Question 15: Enter a number from user and print first digit of number.
+	</div>
+	
+	<div class="answer" id="q15">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+     int num;
+     int rem =0;
+    printf("Enter a number to get its first digit : ");
+    scanf("%d", &num);
+
+    while (num!=0)
+    {
+        rem = num%10;
+        num = num/10;
+    }
+    printf("%d",rem);
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number to get its first digit : 3975842
+3
+	   </pre>
+   
+	</div>
+
+	
+	<div class="question" onclick="showAnswer('q16')">
+	   Question 16: Enter a number from user and print total from 0 to that number.
+	</div>
+	
+	<div class="answer" id="q16">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+    printf("Enter a number : ");
+    scanf("%d", &num);
+
+    for (int i = 0; i <= num; i++)
+    {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number : 16
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+	   </pre>  
+	   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q17')">
+	   Question 17: Enter a number from user and find out factorial of that number.
+	</div>
+	
+	<div class="answer" id="q17">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+    int fact = 1;
+    printf("Enter a number to get its factorial : ");
+    scanf("%d", &num);
+
+    for (int i = num; i >= 1; i--)
+    {
+        fact = fact * i;
+    }
+
+    printf("The factorial of %d is %d", num, fact);
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number to get its factorial : 11
+The factorial of 11 is 39916800
+	   </pre> 
+	   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q18')">
+	   Question 18: Enter two numbers from user and print range from first number to second number.
+	</div>
+	
+	<div class="answer" id="q18">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2;
+
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    printf("Numbers from %d to %d are :-  \n", num1, num2);
+
+    for (int i = num1; i <= num2; i++) {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter first number: 7
+Enter second number: 17
+Numbers from 7 to 17 are :-  
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+	   </pre>   
+	   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q19')">
+	   Question 19: Enter password from user maximum 20 digits / character press enter key if you want to exit.
+	</div>
+	
+	<div class="answer" id="q19">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    char ch;
+
+    for (int i = 0; i <= 20; i++)
+    {
+        ch = getchar();
+
+        if(ch==' '){
+            break;
+        }
+    }
+    
+    return 0;
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+12
+28
+''
+'  '
+exits the program..
+
+
+'  '
+exits the program..
+	   </pre>
+  
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q20')">
+	   Question 20: Write a program to print the counting 1 to 100 with one second delay.
+	</div>
+	
+	<div class="answer" id="q20">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;dos.h&gt;
+
+void main(){
+    int i;
+
+    for ( i = 1; i <= 100; i++)
+    {
+           printf("%d\n",i);
+           delay(1000);
+    }
+    
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+1
+2
+3
+4
+5
+..
+98
+99
+100
+
+Numbers are displayed from 1 to 100 with a delay of one second between each number.
+	   </pre>
+	   
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q21')">
+	   Question 21: Write a program to find out the Fibonacci series/ 1 to 100 (like 0 1 1 2 3 5 8 13………..).
+	</div>
+	
+	<div class="answer" id="q21">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 0, b = 1, c;
+
+    printf("Fibonacci series from 1 to 100:\n");
+
+    while (a <= 100) {
+        printf("%d ", a);
+        c = a + b; 
+        a = b;
+        b = c;
+    }
+
+    return 0;
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Fibonacci series from 1 to 100:
+0 1 1 2 3 5 8 13 21 34 55 89 
+	   </pre>
+ 
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q22')">
+	   Question 22: Enter a character from user and that character should be alphabet.
+	</div>
+	
+	<div class="answer" id="q22">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        printf("'%c' is an alphabet.\n", ch);
+    } else {
+        printf("'%c' is not an alphabet.\n", ch);
+    }
+
+    return 0;
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a character: 3
+'3' is not an alphabet.
+
+Enter a character: f
+'f' is an alphabet.
+	   </pre>
+
+	</div>
+
+
+	<div class="question" onclick="showAnswer('q23')">
+	   Question 23: Check numbers from user is palindrome or not.
+	</div>
+	
+	<div class="answer" id="q23">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num, org;
+    int rev = 0;
+
+    printf("Enter a number to check if it is a palindrome or not : ");
+    scanf("%d", &num);
+
+    org = num;
+
+    while (num != 0)
+    {
+        rev = rev * 10 + (num % 10);
+        num = num / 10;
+    }
+
+    if (org == rev)
+    {
+        printf("It is a palindrome number");
+    }
+
+    else
+    {
+        printf("It is not a palindrome number");
+    }
+
+    return 0;
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number to check if it is a palindrome or not : 194759
+It is not a palindrome number
+
+
+Enter a number to check if it is a palindrome or not : 232323232
+It is a palindrome number
+	   </pre> 
+	   
+	</div>
+
+
+
+	<div class="question" onclick="showAnswer('q24')">
+	   Question 24: Enter a number from user and check it is Armstrong number or not.
+	</div>
+	
+	<div class="answer" id="q24">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num, rem, sum = 0, org;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    org = num; 
+
+    while (num != 0) {
+        rem = num % 10;          
+        sum = sum + (rem * rem * rem); 
+        num = num / 10;          
+    }
+
+    if (sum == org)
+        printf("%d is an Armstrong number.\n", org);
+    else
+        printf("%d is not an Armstrong number.\n",org);
+
+    return 0;
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter a number: 52
+52 is not an Armstrong number.
+
+
+Enter a number: 370
+370 is an Armstrong number.
+	   </pre>
+ 
+	</div>
+
+   </main>
+
+</body>
+</html>
