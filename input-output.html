@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic Input-Output Questions</title>
+	<link rel="stylesheet" href="style1.css">
+	</head>
+
+<body>
+
+
+   <header>
+	<h1>Basic Input-Output Questions</h1>
+	<p>Choose a question to see its answer.</p>
+   </header>
+
+
+   <main>
+	<a href="index.html" class="back">← Back to Topics</a>
+
+<details>
+
+	
+	    <summary>Question 1: Write a program to print the message:
+	   Today I made my first C Program.	
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include  &lt;stdio.h&gt;
+void main(){
+	printf("tody i made my fist c program");
+}
+	   </pre>
+	
+	  <h3>Output</h3>
+	   <pre>
+tody i made my fist c program
+	   </pre> 
+	   
+	</div>
+</details>
+ 
+<details>
+
+	
+	    <summary>Question 2: Write a program to read a character from the keyboard and display it on the screen.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include  &lt;stdio.h&gt;
+void main(){
+    char ch;
+    printf("enter a character: ");
+    scanf("%c",&ch);
+    printf("the character is: %c",ch);
+}	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+enter a character: s
+the character is: s
+	   </pre>
+   
+	</div>
+</details>
+
+<details>
+
+	
+	    <summary>Question 3: Write a program to read only 4 characters from the keyboard and display it on the screen in a separate line.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include  &lt;stdio.h&gt;
+void main(){
+    char c,a,b,d;
+    printf("enter 4 characters : ");
+    scanf("%c %c %c %c",&c,&a,&b,&d);
+    printf("the characters are:\n%c\n%c\n%c\n%c\n",c,a,b,d);
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+enter 4 characters : rthj
+the characters are:
+r
+t
+h
+j
+	   </pre>
+ 
+	</div>
+</details>
+
+<details>
+
+	
+	    <summary>Question 4: Write a program to print your name at center of the first line.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include  &lt;stdio.h&gt;
+void main(){
+    printf("\t\tiqra");
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+                                                                 iqra
+	   </pre>
+   
+	</div>
+</details>
+
+<details>
+
+	
+	    <summary>Question 5: Write a program to store single quote and print that variable to show single quote on output screen.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include  &lt;stdio.h&gt;
+void main(){
+    char ch;
+    ch='\'';
+    printf("%c %c",ch,ch);
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+	' '
+	   </pre>
+   
+	</div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 6: Write a program for printing your name on output screen but your name should blink 5 times.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include  &lt;stdio.h&gt;
+#include  &lt;conio.h&gt;
+#include  &lt;dos.h&gt;
+void main(){
+    int i;
+    for(i=1;i<=5;i++){
+     
+        printf("abc");
+        delay(500);
+       clrscr();
+
+       delay(500);
+    }
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+	<h3>abc</h3>
+The text appears and disappears 5 times.
+	   </pre>   
+	   
+	</div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 7: Write the program to display this output
+	   #include
+	   #include
+	   #include
+	   void main ()
+	   {
+	   clrscr();
+	   printf(“hello,welcome to c”);
+	   delay(5000);
+	   }
+	</summary>
+	
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include  &lt;stdio.h&gt;
+#include  &lt;conio.h&gt;
+#include  &lt;dos.h&gt; 
+void main () {
+    clrscr();
+     printf("hello,welcome to c");
+      delay(5000); 
+} 
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+hello,welcome to c
+	   </pre>  
+	   
+	</div>
+</details>
+
+
+<details>
+
+	    <summary>Question 8: Write a program to print your name at the center of the page.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include  &lt;stdio.h&gt;
+void main(){
+    printf("\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t     abcc");
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+
+
+                                                                          abcc 
+
+
+            </pre>
+   
+	</div>
+</details>
+
+
+<details>
+
+	   <summary> Question 9: Enter password display like ******.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include  &lt;stdio.h&gt;
+void main(){
+    char a,b,c,d,e,f;
+    printf("enter password(6 word): ");
+    scanf("%c %c %c %c %c %c",&a,&b,&c,&d,&e,&f);
+    printf("pass is ******");
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+enter password(6 word): 654321
+pass is ******
+	   </pre>
+   
+	</div>
+</details>
+
+<details>
+
+	
+	    <summary>Question 10: Enter two character from user and print ASCII value.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include  &lt;stdio.h&gt;
+void main(){
+    char a;
+    char b;
+    printf("enter first character: ");
+    scanf(" %c",&a);
+    printf("enter second character: ");
+    scanf(" %c",&b);
+    printf("ascii value is %d and %d",a,b);
+}
+   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+enter first character: d
+enter second character: j
+ascii value is 100 and 106
+	   </pre>
+  
+	</div>
+</details>
+
+
+<details>
+
+	    <summary>Question 11: Print all ASCII character 0 to 127.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include  &lt;stdio.h&gt;
+void main(){
+int i;
+for(i=0;i<=127;i++){
+    printf("%c\n",i);
+ }
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+:
+;
+<
+=
+>
+?
+@
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+[
+\
+]
+^
+_
+`
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+{
+|
+}
+~	
+
+	   </pre>
+  
+	</div>
+</details>
+
+   </main>
+</body>
+</html>

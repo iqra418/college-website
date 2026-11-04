@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Handling Questions</title>
+	<link rel="stylesheet" href="style1.css">
+	</head>
+
+<body>
+
+
+   <header>
+	<h1>File Handling Questions</h1>
+	<p>Choose a question to see its answer.</p>
+   </header>
+
+
+   <main>
+	<a href="index.html" class="back">← Back to Topics</a>
+
+
+<details>
+	
+	    <summary>Question 1:Enter the filename from the user and enter the data from the user and put in the file. 	
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;dos.h&gt;
+void main()
+{
+FILE *f;
+char fname[20], data[20];
+clrscr();
+printf("Enter filename:");
+scanf("%s",fname);
+
+f=fopen(fname,"w");
+printf("Enter data:");
+scanf("%s",data);
+fprintf(f,"%s",data);
+printf("Data stored successfully");
+fclose(f);
+delay(3000);
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter filename:file1
+Enter data:information
+Data stored successfully
+	   </pre>
+	   
+	</div>
+</details>
+ 
+<details>
+	
+	    <summary>Question 2: Enter the filename from the user and enter the data from the user and put in the file but data should be in capital letter.	
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;dos.h&gt;
+void main()
+{
+FILE *f;
+char fname[20], data[20];
+int i;
+clrscr();
+printf("Enter filename:");
+scanf("%s",fname);
+
+f=fopen(fname,"w");
+printf("Enter data:");
+scanf("%s",data);
+
+for(i=0; data[i]!='\0'; i++)
+{
+if(data[i]>=97 && data[i]<=122)
+{
+data[i]=data[i]-32;
+}
+}
+fprintf(f,"%s",data);
+printf("Data stored successfully");
+fclose(f);
+delay(3000);
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter filename:file2
+Enter data:mywebsite
+Data stored successfully
+	   </pre>
+	   
+	</div>
+</details>
+ 
+
+<details>
+	
+	    <summary>Question 3: Enter the filename from the user and enter the data from the user till the user want to enter the data.
+
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;dos.h&gt;
+void main()
+{
+FILE *f;
+char fname[20], data[20], ch;
+clrscr();
+printf("Enter filename:");
+scanf("%s",fname);
+
+f=fopen(fname,"w");
+do{
+printf("Enter data:");
+scanf("%s",data);
+fprintf(f,"%s",data);
+printf("Do u want to enter more y/n:");
+scanf(" %c",&ch);
+}while(ch=='y' || ch=='Y');
+fclose(f);
+delay(3000);
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter filename: file3
+Enter data: Hello
+Do u want to enter more y/n: y
+
+Enter data: World
+Do u want to enter more y/n: y
+
+Enter data: Computer
+Do u want to enter more y/n: n
+	   </pre>
+	   
+	</div>
+</details>
+ 
+
+<details>
+	
+	    <summary>Question 4: Enter the filename from the user and enter the data from the user and copy that file into another file.	
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;dos.h&gt;
+void main()
+{
+FILE *f1, *f2;
+char fname1[20], fname2[20], data[100];
+int ch;
+clrscr();
+printf("Enter filename:");
+scanf("%s",fname1);
+
+f1=fopen(fname1,"w");
+printf("Enter data:");
+scanf("%s",data);
+
+fprintf(f1,"%s",data);
+fclose(f1);
+
+printf("Enter second filename:");
+scanf("%s",fname2);
+
+f1=fopen(fname1,"r");
+f2=fopen(fname2,"w");
+
+while((ch=fgetc(f1))!=EOF)
+{
+fputc(ch,f2);
+}
+printf("File copied successfully");
+fclose(f1);
+fclose(f2);
+delay(3000);
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter filename:file4
+Enter data:bca
+Enter second filename:file5
+File copied successfully
+	   </pre>
+	   
+	</div>
+</details>
+ 
+
+ 
+
+<details>
+	
+	    <summary>Question 5:Enter the filename from the user and enter the data from the user and count the number of charcaters in file.
+
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;dos.h&gt;
+void main()
+{
+FILE *f1;
+char fname1[20], data[100];
+int ch, count=0;
+clrscr();
+printf("Enter filename:");
+scanf("%s",fname1);
+
+f1=fopen("fname1","w");
+printf("Enter data:");
+scanf("%s",data);
+
+fprintf(f1,"%s",data);
+fclose(f1);
+
+f1=fopen(fname1,"r");
+
+while((ch=fgetc(f1))!=EOF)
+{
+count++;
+}
+fclose(f1);
+printf("Number of characters=%d",count);
+delay(3000);
+}
+
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter filename: abc.txt
+Enter data:hello
+Number of characters=5 
+	   </pre>
+	   
+	</div>
+</details>
+ 
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Questions</title>
+	<link rel="stylesheet" href="style1.css">
+	</head>
+
+<body>
+
+
+   <header>
+	<h1>String Questions</h1>
+	<p>Choose a question to see its answer.</p>
+   </header>
+
+
+   <main>
+	<a href="index.html" class="back">← Back to Topics</a>
+
+
+<details>
+	
+	    <summary>Question 1: Enter a string from user and convert in uppercase.	
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;conio.h&gt;
+
+void main(){
+char str[50];
+int i;
+clrscr();
+printf("Enter any sentence you like: ");
+gets(str);
+for(i=0;str[i];i++){
+if(str[i]>='a'&& str[i]<='z'){
+str[i]=str[i]-32;
+}
+}
+printf("Here is the uppercase version of it: %s",str);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter any sentence you like: hello world
+Here is the uppercase version of it: HELLO WORLD
+	   </pre>
+	   
+	</div>
+</details>
+ 
+
+<details>
+	
+	    <summary>Question 2: Enter a string from user and convert into lowercase. 
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;conio.h&gt;
+
+void main(){
+char str[50];
+int i;
+clrscr();
+printf("Enter any sentence you like: ");
+gets(str);
+for(i=0;str[i];i++){
+if(str[i]>='A'&& str[i]<='Z'){
+str[i]=str[i]+32;
+}
+}
+printf("Here is the lowercase version of it: %s",str);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter any sentence you like: THIS IS MY CODE
+Here is the lowercase version of it: this is my code
+	   </pre>
+  
+	</div>
+</details>
+
+
+<details>
+	
+	    <summary>Question 3: Enter a string from user and convert into sentence case. 
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;conio.h&gt;
+
+void main(){
+char str[50];
+int i;
+clrscr();
+printf("Enter any sentence you like: ");
+gets(str);
+if(str[0]>='a' && str[0]<='z')str[0]=str[0]-32;
+for(i=0;str[i];i++){
+if(str[i-1]=='.' && str[i]>='a'&& str[i]<='z'){
+str[i]=str[i]-32;
+}
+}
+printf("Here is the sentencecase version of it: %s",str);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter any sentence you like: welcome to my page
+Here is the sentencecase version of it: Welcome to my page
+	   </pre> 
+	   
+	</div>
+</details>
+
+
+<details>
+	
+	   <summary> Question 4: Enter a string from user and convert into title case.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;conio.h&gt;
+
+void main(){
+char str[50];
+int i;
+clrscr();
+printf("Enter any sentence you like: ");
+gets(str);
+if(str[0]>='a' && str[0]<='z')str[0]=str[0]-32;
+for(i=0;str[i];i++){
+if( (str[i-1]==' ' && str[i]>='a'&& str[i]<='z')  || (str[i-1]=='.' && str[i]>='a'&& str[i]<='z')){
+str[i]=str[i]-32;
+}
+}
+printf("Here is the titlecase version of it: %s",str);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter any sentence you like: c is a programming language
+Here is the titlecase version of it: C Is A Programming Language
+	   </pre>
+   
+	</div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 5: Enter a string from user and convert into toggle case.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str[50];
+int i,l;
+clrscr();
+printf("Enter any sentence you like: ");
+gets(str);
+l=strlen(str);
+for(i=0;i&lt;l;i+=2){
+if((str[i]<='Z'&& str[i]>='A')|| (str[i]>='a' && str[i]<='z')){
+if (str[i]<='Z' && str[i]>='A')str[i]=str[i]+32;
+else if (str[i]<='z' && str[i]>='a')str[i]=str[i]-32;
+}
+if(i%3==0)i=i+2; // for randomness
+}
+puts(str);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter any sentence you like: hello this is mee
+HellO This iS meE
+	   </pre>
+  
+	</div>
+</details>
+
+
+<details>
+	
+	    <summary>Question 6: Enter a string from user and final length of the string.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str[50];
+int l;
+clrscr();
+printf("Enter the string you like: ");
+gets(str);
+l=strlen(str);
+printf("The final length of your string is %d",l);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter the string you like: i am a student
+The final length of your string is 14
+	   </pre>
+	   
+	</div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 7: Enter a string from user and compare those string. 
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str1[50],str2[50];
+int l;
+clrscr();
+printf("Enter the string 1: ");
+gets(str1);
+printf("Enter the string 2: ");
+gets(str2);
+l=strcmp(str1,str2);
+if(l==0)printf("Both strings are same");
+else printf("Both strings are different");
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter the string 1: bca
+Enter the string 2: bba
+Both strings are different
+
+Enter the string 1: hello
+Enter the string 2: hello
+Both strings are same
+	   </pre>
+   
+	</div>
+</details>
+
+
+<details>
+
+	    <summary>Question 8: Enter a string from user and concatenate the string.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	   <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str1[50],str2[50];
+int l;
+clrscr();
+printf("Enter the string1: ");
+gets(str1);
+printf("Enter the string2: ");
+gets(str2);
+strcat(str1,str2);
+printf("Your final string is %s",str1);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter the string1: water
+Enter the string2: melon
+Your final string is watermelon
+	   </pre>
+
+	 </div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 9: Enter a string from user and copy that string into another string.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str1[50],str2[50];
+int l;
+clrscr();
+printf("Enter the string1 you like: ");
+gets(str1);
+strcpy(str2,str1);
+printf("copied string2:  %s",str2);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter the string1 you like: butterfly
+copied string2:  butterfly
+	   </pre>
+
+	</div>
+</details>
+
+
+<details>
+	
+ <summary> Question 10: Enter the string from user ,enter a number from user ,if the user enter 0 then you will print first character of string ,if the user 	   enter 1 then you will print second character of string ,if user enter 2 then you will print third character of string ,if user enter 3 then you 	   point fourth character of string and if out of string then you will print out of bound.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str[50];
+int l,d;
+clrscr();
+printf("Enter the string you like: ");
+gets(str);
+l=strlen(str);
+printf("which character you want you print(index): ");
+scanf("%d",&d);
+if (d&lt;0) printf("Please enter a number greater than or equal to 0 only");
+else if(d&lt;l)printf("%c",str[d]);
+else printf("Out of bound");
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter the string you like: library
+which character you want you print(index): 5
+r
+
+Enter the string you like: library
+which character you want you print(index): 9
+Out of bound
+	   </pre>
+  
+	</div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 11: Enter the string from user and print each character in new line.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	  <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str[50];
+int i;
+clrscr();
+printf("Enter the string: ");
+gets(str);
+printf("Here are each character in new line:\n");
+for(i=0;str[i];i++){
+printf("%c\n",str[i]);
+}
+getch();
+}
+	   </pre>
+
+	   <h3>Output</h3>
+	    <pre>
+Enter the string: ice cream
+Here are each character in new line:
+i
+c
+e
+ 
+c
+r
+e
+a
+m
+	   </pre>
+
+	</div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 12: Enter the string from user and copy reverse order into another string.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str1[50],str2[50];
+int i,l;
+clrscr();
+printf("Enter the string 1: ");
+gets(str1);
+l=strlen(str1);
+for(i=0;str1[i];i++){
+str2[i]=str1[l-1-i];
+}
+str2[i]=0;
+printf("Here is the string2(reverese of string1): %s",str2);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	   <pre>
+Enter the string 1: bachelor of computer application
+Here is the string2(reverese of string1): noitacilppa retupmoc fo rolehcab
+	   </pre>  
+	   
+	</div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 13: Enter two string from user and print difference each character.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str1[50],str2[50];
+int l1,l2,i,l;
+clrscr();
+printf("Enter the first string: ");
+gets(str1);
+l1=strlen(str1);
+printf("Enter the Second string: ");
+gets(str2);
+l2=strlen(str2);
+if(l1&gt;l2)l=l2;
+else l=l1;
+for(i=0;i&lt;l;i++){
+printf("%d", str1[i]-str2[i]);
+}
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter the first string: moon
+Enter the Second string: light
+1686
+	   </pre> 
+	   
+	</div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 14: Enter the string from user and enter a character , it is exist or not. 
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str[50],c;
+int i;
+clrscr();
+printf("Enter the string you like: ");
+gets(str);
+printf("Enter the character: ");
+scanf("%c",&c);
+for(i=0;str[i];i++){
+if(str[i]==c){
+printf("Your string do have this character."); goto jump; }
+}
+printf("Your string does not have this character.");
+jump:
+getch();
+}
+	   </pre>
+
+
+	  <h3>Output</h3>
+	    <pre>
+Enter the string you like: scenery
+Enter the character: a
+Your string does not have this character.
+
+Enter the string you like: scenery
+Enter the character: y
+Your string do have this character.
+	   </pre>  
+	   
+	</div>
+</details>
+
+<details>
+
+	    <summary>Question 15:Enter the string from user and enter a character if it is exist then print the bound number. 
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str[50],c;
+int i;
+clrscr();
+printf("Enter the string you like: ");
+gets(str);
+printf("Enter the character: ");
+scanf("%c",&c);
+for(i=0;str[i];i++){
+if(str[i]==c){
+printf("Your string do have this character at bound number: %d",i); goto jump; }
+}
+printf("Your string does not have this character.");
+jump:
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter the string you like: i am in bca
+Enter the character: a
+	   </pre>   
+	   
+	</div>
+</details>
+
+<details>
+
+	
+	   <summary> Question 16: Enter the string from user and count all vowels.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str[50];
+int i,v=0;
+clrscr();
+printf("Enter the string you like: ");
+gets(str);
+for(i=0;str[i];i++){
+if((str[i]=='a')||(str[i]=='e')||(str[i]=='i')||(str[i]=='o')||(str[i]=='u')||(str[i]=='A')||(str[i]=='E')||(str[i]=='I')||(str[i]=='O')||(str[i]=='U'))
+v+=1;
+}
+printf("Total number of vowels in string: %d",v);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter the string you like: i am making my c website
+Total number of vowels in string: 7
+	   </pre>
+ 
+	</div>
+</details>
+
+<details>
+
+	
+	    <summary>Question 17: Enter the string from user and enter bound number and print character on that bound.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str[50];
+int i,b=0;
+clrscr();
+printf("Enter the string you like: ");
+gets(str);
+printf("Enter the bound number: ");
+scanf("%d",&b);
+printf("The character on the bound is : %c",str[b]);
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter the string you like: hello world
+Enter the bound number: 8
+The character on the bound is : r
+	   </pre> 
+	   
+	</div>
+</details>
+
+
+<details>
+
+	    <summary>Question 18: String palindrome example (using reverse).
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char str1[50],str2[50];
+int i,l;
+clrscr();
+printf("Pallindrome are words that spells the same forward and backward for example \nNITIN,NAMAN and MOM\n");
+printf("Enter any word to check if it is a pallindrome: ");
+gets(str1);
+l=strlen(str1);
+for(i=0;str1[i];i++){
+str2[i]=str1[l-1-i];
+}
+str2[i]=0;
+l=strcmp(str1,str2);
+if(l==0)printf("That is a pallindrome");
+else printf("That is not a pallindrome");
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	<pre>
+Pallindrome are words that spells the same forward and backward for example 
+NITIN,NAMAN and MOM	    
+Enter any word to check if it is a pallindrome: madam
+That is a pallindrome
+
+Pallindrome are words that spells the same forward and backward for example 
+NITIN,NAMAN and MOM
+Enter any word to check if it is a pallindrome: power
+That is not a pallindrome
+	   </pre>
+   
+	</div>
+</details>
+
+<details>
+
+	
+	    <summary>Question 19: Enter the data from user the data consist of roll no. ,name ,class , marks of 5 subjects.
+	</summary>
+	
+	<div class="answer">	   
+	   <h3>Code</h3>
+	    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+char name[25],roll[7],clas[7],mark[5][2];
+clrscr();
+printf("Enter all the details below\n");
+printf("Enter your name: ");
+gets(name);
+printf("Enter the roll number: ");
+gets(roll);
+printf("Enter the marks of these 5 subject:\n");
+printf("English: ");
+gets(mark[0]);
+printf("Physics: ");
+gets(mark[1]);
+printf("Chemistry: ");
+gets(mark[2]);
+printf("Biology: ");
+gets(mark[3]);
+printf("physical Education: ");
+gets(mark[4]);
+printf("Press any key to submit");
+getch();
+}
+	   </pre>
+
+	  <h3>Output</h3>
+	    <pre>
+Enter all the details below
+Enter your name: Iqra Parveen 
+Enter the roll number: 4091
+Enter the marks of these 5 subject:
+English: 91
+Physics: 66
+Chemistry: 85
+Biology: 91
+physical Education: 88
+Press any key to submit
+	   </pre>
+  
+	</div>
+</details>
+
+   </main>
+
+</body>
+</html>
